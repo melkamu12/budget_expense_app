@@ -1,0 +1,7 @@
+<%= render 'shared/head', title: 'categories', back: true %>
+
+<h1>Welcome to the categories page</h1>
+<form class="d-flex" method="post" action="<%= destroy_user_session_path %>">
+        <%= csrf_meta_tags %>
+        <%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete } %>
+</form>
