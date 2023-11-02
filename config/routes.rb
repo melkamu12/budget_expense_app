@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   unauthenticated :user do
     root to: 'homes#index', as: :unauthenticated_root
   end
-  # Define the root route for authenticated users (e.g., categories#index)
+  # Define the root route for authenticated users (categories#index)
   authenticated :user do
     root to: 'categories#index', as: :authenticated_root
   end
-  resources :categories, only: %i[index new  create destroy] do
+  resources :categories, only: %i[index new  create destroy edit update] do
     resources :expenses, only: [:index, :new, :create, :destroy]
   end
 end

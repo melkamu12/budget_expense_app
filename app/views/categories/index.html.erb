@@ -1,7 +1,29 @@
-<%= render 'shared/head', title: 'categories', back: true %>
+<main class="category-section">
+  <div class="category-container">
+    <%= render "shared/head", title: 'categories', back: false %>
+    <div class="success-fail">
+      <% if flash[:notice] %>
+        <%= render 'shared/message', message: flash[:notice], status: 'success' %>
+      <% end %>
 
-<h1>Welcome to the categories page</h1>
-<form class="d-flex" method="post" action="<%= destroy_user_session_path %>">
-        <%= csrf_meta_tags %>
-        <%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete } %>
-</form>
+      <% if flash[:alert] %>
+        <%= render 'shared/message', message: flash[:alert], status: 'danger' %>
+      <% end %>
+    </div>
+
+    <% if @categories.empty? %>
+      <div class="container-fluid p-4">
+        <h1>Welcome to this mobile web application where you can manage your budget</h1>
+      </div>
+    <% else %>
+      <ul class="list-group mt-5 category-container bg-light">
+         <%= render "shared/category_card"%>
+      </ul>
+    <% end %>
+      <div class="mt-auto">
+      <div class="add-category-container d-flex justify-content-center px-3 px-md-5 py-3">
+        <%= link_to "ADD CATEGORY", new_category_path, class: 'btn btn-outline-light btn-lg' %>
+      </div>
+    </div>
+  </div>
+</main>
