@@ -70,4 +70,4 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 # Gemfile
 gem 'devise'
 gem 'font-awesome-rails'
-
+gem 'cancancan'
