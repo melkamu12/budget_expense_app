@@ -9,20 +9,12 @@
   }
   
   :root {
-    --primary-color: #3778c2;
-    --secondary-color: #5fb523;
+    --primary-color: #1e75d8;
+    --secondary-color: #44940b;
     --text-color: #434b54;
     --smoke-color: #f5f5f5;
-  }
+    --read-color: #e90d0d;
 
-  .btn {
-    background-color: var(--secondary-color);
-    color: var(--smoke-color);
-  }
-  
-  .btn:hover {
-    background-color: var(--primary-color);
-    color: var(--smoke-color);
   }
   
   .custom {
@@ -52,7 +44,7 @@
   }
   
   .category-container {
-    min-height: 70vh;
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
   }
@@ -71,42 +63,34 @@
     width: 100%;
     font-size: 20px;
   }
-  
-  .getting-started-container {
-    background-color: var(--primary-color);
-    border-radius: 12px;
-    border: 1px solid rgb(162, 162, 162);
-  }
-  
-  .no-expense-container h2 {
-    background-color: var(--primary-color);
-    border: 1px solid var(--smoke-color);
-    border-radius: 12px;
-  }
-  
-  .getting-started-container h2 {
-    font-weight: bold;
-    color: white;
-    padding: 8px 0;
-  }
-  
-  .getting-started-container p {
-    color: var(--smoke-color);
-    font-size: small;
-  }
-  
-.notice {
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 10px;
-}
 
-.alert {
-    background-color: red;
-    color: var(--smoke-color);
-    padding: 10px;
-}
+  .notice {
+      background-color: var(--secondary-color);
+      color: black;
+      padding: 10px;
+  }
+
+  .alert {
+      background-color: red;
+      color: var(--smoke-color);
+      padding: 10px;
+  }
 
 .Splash-title {
     font-family: 'Lemonada', cursive;
+}
+
+.message-container {
+  padding-top: 1px;
+  align-items: center;
+}
+
+.btn {
+  background-color: var(--secondary-color);
+  color: var(--smoke-color);
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  color: var(--smoke-color);
 }

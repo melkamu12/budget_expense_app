@@ -9,6 +9,7 @@ class CategoriesController < ApplicationController
         @category = Category.new
         @icon_options = Category::ICON_OPTIONS
     end
+    
     def edit
         @category = Category.find(params[:id])
         @icon_options = Category::ICON_OPTIONS
@@ -18,7 +19,8 @@ class CategoriesController < ApplicationController
         @category = Category.find(params[:id])
 
         if @category.update(category_params)
-            redirect_to category_path(@category), notice: 'Category was successfully updated.'
+            flash[:notice] = "Expense category successfully Updated."
+            redirect_to categories_path
         else
             flash.now[:alert] = 'Category cannot be updated.'
             render :edit
@@ -35,9 +37,9 @@ class CategoriesController < ApplicationController
         @user = current_user
         @category = @user.categories.build(user_id:@user.id, **category_params)
         if @category.save
-            redirect_to categories_path(@user)
+            redirect_to categories_path, notice: 'New expense category successfully created.'
         else 
-            render :new, status: :unprocessable_entity
+            redirect_to categories_path, alert: 'Cannot create a new expense category'
         end
     end
 

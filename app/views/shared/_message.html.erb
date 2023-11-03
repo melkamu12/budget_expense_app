@@ -1,13 +1,16 @@
-<div class=" message-container">
+<div class="message-container">
     <div class="<%= status %> flex justify-content-between" id="alert-box">
         <% if status == 'notice' %>
             <span class=""><%= notice %></span>
         <% else %>
             <span class=""><%= alert %></span>
         <% end %>
+        <div class="d-flex justify-content-end">
         <button type="button" class="btn-close"  onclick='closeMessage()' aria-label="Close"></button>
     </div>
+    </div>
 </div>
+
 <script>
     function closeMessage() {
         document.getElementById('alert-box').style.display = "none"

@@ -12,11 +12,23 @@
   <% end %>
 </div>
 
-  <div class="expense-container bg-light">
+  <div class="card expense-container bg-light m-1 p-1">
     <% if @expenses.empty? %>
-      <div class="no-expense-container text-center">
-        <h2 class="text-white border px-4 py-3 shadow-sm text-md font-semibold">There is no expense for this category</h2>
-      </div>
+      <ul class = "bg-light m-0 p-0 bg-light">
+        <li class="category-list  mx-2 d-flex justify-content-between shadow-lg px-3 py-5 my-5 bg-white">
+        <div class="icon-container text-3xl me-4"><%= @category.icon %></div>
+        <div class="text-md opacity-75 font-semibold text-uppercase"><%= @category.name %></div>
+        <div class="d-inline-flex">
+            <%= link_to edit_category_path(@category), class: 'btn btn-success btn-sm mr-1' do %>
+              <i class="fas fa-edit text-xl"></i>
+            <% end %>
+        <%= button_to category_path(@category), method: :delete, class: 'btn btn-danger btn-sm mr-1' do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+        </div>
+      </li>
+        <h5>There is no expense for this category</h5>
+      <ul>
     <% else %>
       <ul class="bg-light m-0 p-0 bg-light">
         <li class="category-list px-2 d-flex justify-content-between shadow-lg py-5 my-5 bg-white">
@@ -28,17 +40,17 @@
           <div class="icon-container text-3xl me-4"><%= @category.icon %></div>
           <div class="text-md opacity-75 font-semibold text-uppercase"><%= @category.name %></div>
           <div class="d-inline-flex">
-              <%= link_to edit_category_path(@category), class: 'btn btn-sm mr-1' do %>
+              <%= link_to edit_category_path(@category), class: 'btn btn-success btn-sm mr-1' do %>
                 <i class="fas fa-edit text-xl"></i>
               <% end %>
-          <%= button_to category_path(@category), method: :delete, class: 'btn btn-sm mr-1' do %>
-            <i class="fas fa-trash text-xl"></i>
+          <%= button_to category_path(@category), method: :delete, class: 'btn btn-danger btn-sm mr-1' do %>
+            <i class="fas fa-trash"></i>
           <% end %>
           </div>
         </li>
 
         <% @expenses.each do |expense| %>
-          <li class="card mx-2 mb-3">
+          <li class="card mb-3">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                   <div class="icon-container text-3xl me-4"><%= @category.icon %></div>
@@ -48,8 +60,8 @@
             </div>
             <div class="card-footer d-flex justify-content-between align-items-center p-1">
               <span class="text-muted font-semibold"><%= expense.created_at.strftime('%d-%m-%Y') %></span>
-              <%= button_to category_expense_path(@category, expense), method: :delete, class: 'btn' do %>
-                <i class="fas fa-trash text-xl"></i>
+              <%= button_to category_expense_path(@category, expense), method: :delete, class: 'btn btn-danger btn-sm' do %>
+                <i class="fas fa-trash"></i>
               <% end %>
             </div>
           </li>

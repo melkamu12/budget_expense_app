@@ -12,12 +12,6 @@ class ExpensesController < ApplicationController
 
     def create
         @category = Category.find_by(id: params[:category_id])
-
-        if @category.nil?
-            redirect_to root_path, alert: 'Category not found'
-            return
-        end
-
         @categories = Category.all
 
         if @categories.empty?
@@ -26,7 +20,7 @@ class ExpensesController < ApplicationController
         end
 
         @expense = @category.expenses.build(expense_params)
-
+        
         if @expense.save
             redirect_to category_expenses_path(category_id: @category.id), notice: 'Expense was successfully created.'
         else
