@@ -66,5 +66,5 @@ RSpec.describe 'categories index ' do
     visit authenticated_root_path
     click_on 'ADD CATEGORY'
     expect(page).to have_content('Select an Icon')
-  end  
+  end
 end

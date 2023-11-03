@@ -4,7 +4,7 @@ RSpec.describe Category, type: :model do
   let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 'password') }
   before { user.save }
 
-  let(:category) { Category.new(id: 1, name: 'online', icon: '🍔', user: user) }
+  let(:category) { Category.new(id: 1, name: 'online', icon: '🍔', user:) }
   before { category.save }
 
   it 'is valid with valid attributes' do
