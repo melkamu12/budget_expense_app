@@ -1,8 +1,7 @@
 class CategoriesController < ApplicationController
     before_action :authenticate_user!
     def index
-        @categories = Category.all
-        @user = current_user
+        @categories = current_user.categories.includes(:expenses)
     end
 
     def new
