@@ -60,10 +60,10 @@ A fully functional mobile app that shows the list of categories and all the expe
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-[Live Demo]() for Ease Expense
+[Live Demo](https://budget-expense-app-un7r.onrender.com/users/sign_in) for Ease Expense
 
 ## 🚀 Presentation 
-[Video presentation]() for the app
+[Video presentation](https://drive.google.com/file/d/154sLkoQ1zEM3aLbAcZiHhgp3spE7djx6/view?usp=sharing) for the app
 
 <!-- GETTING STARTED -->
 
