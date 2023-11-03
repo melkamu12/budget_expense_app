@@ -54,16 +54,16 @@ A fully functional mobile app that shows the list of categories and all the expe
 ### Key Features <a name="key-features"></a>
 
 - MVC
-- Integration Specs
+- Integration and unit Specs
 - Authentication & Authorization
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-[Live Demo](https://ease-expense.onrender.com) for Ease Expense
+[Live Demo]() for Ease Expense
 
 ## 🚀 Presentation 
-[Video presentation](https://drive.google.com/file/d/1P1aTyqGN4LtX4PXS-f3vvaKN1PpREEor/view?usp=sharing) for the app
+[Video presentation]() for the app
 
 <!-- GETTING STARTED -->
 
@@ -75,13 +75,15 @@ In order to run this project you need:
 
 - [Ruby](https://www.ruby-lang.org/en/) installed and running.
 - You should be able to use [IRB](<https://en.wikipedia.org/wiki/Ruby_(programming_language)#Features>).
+- PostgreSQL
+- Bundler
 
 ### Setup
 
 Clone this repository to your desired folder:
 
 ```
-  git clone git@github.com:rubydevi/ease-expense.git
+  git@github.com:melkamu12/budget_expense_app.git
 ```
 
 ### Install
@@ -125,7 +127,6 @@ To test the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Forms
 - Multiple Roles
 - User Management System
 
