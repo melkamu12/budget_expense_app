@@ -1,0 +1,15 @@
+<%= render 'shared/head', title: 'ForgotPWD?', back: true %>
+<div class="container-fluid vh-100 pt-10">
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="col-md-6 p-3 mb-4">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'form-control py-2 border-bottom mx-auto outline-none text-md', required: true %>
+      </div>
+    </div>
+    </div>
+    <div class="row justify-content-center px-5 py-7">
+      <%= f.submit "Send me reset password instructions", class: 'btn  text-center text-white py-3' %>
+    </div>
+  <% end %>
+</div>

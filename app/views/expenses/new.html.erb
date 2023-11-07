@@ -1,0 +1,39 @@
+<main class="expense_section">
+  <div class="expense-container"> 
+    <div>
+        <%= render "shared/head", title: "add Expense", back: true %>
+    </div>
+    <% if flash[:notice].present? %>
+        <div class="notice">
+            <%= flash[:notice] %>
+        </div>
+    <% end %>
+    <div class="form-container">
+    <%= form_with model: [@category, @expense], url: category_expenses_path(@category), method: :post do |form| %>
+    <div class="border p-5 vh-80">
+        <div class="form-floating mb-3 ">
+        <%= form.text_field :name, class: "form-control", placeholder: "Name", required: true %>
+        <%= form.label :name, class: "col-sm-2 col-form-label" %>
+        </div>
+
+        <div class="form-floating mb-3">
+        <%= form.number_field :amount, class: "form-control", placeholder: "Amount", required: true %>
+        <%= form.label :amount, class: "col-sm-2 col-form-label" %>
+        </div>
+        
+        <div class="mb-3">
+            <%= form.select :category_ids,
+                Category.all.map { |category| [category.name, category.id] },
+                { include_blank: 'Category' },
+                { class: 'form-select form-select-lg mb-1', multiple: true, 'aria-label': 'multiple select example' }
+            %>
+        </div>
+    </div>
+    
+    <div class="add-category-container d-flex justify-content-center px-5 py-7">
+    <%= form.submit "Create Expense", class: 'btn btn-outline-light my-2 btn-lg w-80 text-uppercase' %>
+  </div>
+  <% end %>
+</div>
+</div>
+</main>
