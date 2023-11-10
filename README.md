@@ -1,4 +1,4 @@
-# ease-expense
+# budget expense app
 
 <a name="readme-top"></a>
 
